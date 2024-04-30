@@ -329,6 +329,8 @@ def json_decoder(data):
 
 if __name__ == "__main__":
     apiList = APIList(data)
-    apiList.showAllState()
+    print(apiList.DataMainVehilceAPI())
+
+    #apiList.showAllState()
 
     #json_decoder(data)
