@@ -144,6 +144,47 @@ print(apiList.RoadLineListAPI())
 
 ## 3.Output API
 These APIs are what users should send to the scenes. 
-file: vehicleControl.py. 
+file: ***vehicleControl.py***. 
 
 API:json_encoder:
+
+### 3.1 vehicleoControlAPI
+
+API construct:
+`vehicleoControl1 = vehicleoControlAPI(0, 0, 0)`  
+API init:
+```class vehicleoControlAPI:
+    def __init__(self, throttle, brake, steering):  
+```
+
+### 3.2 vehicleoControl activate API
+You can activate your setting of vehicle control state in the way below. 
+`
+vehicleoControl1 = vehicleoControlAPI(0, 0, 0)  # the value can be set by yourself
+json_encoder(vehicleoControlAPI)
+control_dict_demo = algorithm(apiList, vehicleoControl1)
+socketServer.socket_send(control_dict_demo)
+`
+
+### 3.3 __throttleSet__
+You can set the throttle by this API
+`    
+def __throttleSet__(self, throttle, speed = 0, keyboardModel=False):
+`
+### 3.4 __brakeSet__
+You can set the brake by this API
+`
+def __brakeSet__(self, brake, speed = 0, keyboardModel=False):
+`
+
+### 3.5 __steeringSet__
+You can set the steer by this API
+`    
+def __steeringSet__(self, steering, yaw = 0, keyboardModel=False):
+`
+
+### 3.6 __pathVisualizationSet__
+You can set the path visualization mode by this API
+`
+def __pathVisualizationSet__(self, pathlistx, pathlisty):
+`
